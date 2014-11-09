@@ -1,11 +1,12 @@
 public class ArrayList implements List{
 	public int size = 0;
-	ReturnObject[] theActualList;
-	//Constructor method below, makes arrayList of 10 ReturnObjects and sets all values to null
+	ReturnObjectImpl[] theActualList;
+	//Constructor method below, makes arrayList of 10 ReturnObjects and sets all values to 'empty'
 	public void ArrayList(){
-		theActualList = new ReturnObject[10];
+		String empty = new String("String");
+		theActualList = new ReturnObjectImpl[10];
 		for (int x = 0; x < theActualList.length; x++){
-			theActualList[x] = null;
+			theActualList[x] = new ReturnObjectImpl(empty);
 		}
 	}
 	public boolean isEmpty(){
@@ -19,20 +20,21 @@ public class ArrayList implements List{
 	public int size(){
 		return this.size;
 	}
-	public ReturnObject get(int index){
+	public ReturnObjectImpl get(int index){
 	}
-	public ReturnObject add(Object item){
+	public ReturnObjectImpl add(Object item){
 	}
-	public ReturnObject add(int index, Object item){
+	public ReturnObjectImpl add(int index, Object item){
 	}
 	public void isNearlyFull(){
-		if (this.theActualList[this.theActualList.length - 1] != null){  //ArrayList nearly full
+		String empty = new String("String");
+		if (this.theActualList[this.theActualList.length - 1].containsSomething == true){  //ArrayList nearly full
 			ReturnObject[] temp = new ReturnObject[(this.theActualList.length) *2];
 			for (int x = 0; x < this.size; x++){
 				temp[x] = this.theActualList[x];
 			}
 			for (int y = this.size; y < temp.length; y++){
-				temp[y] = null;
+				temp[y] = new ReturnObjectImpl(empty);
 			}
 			this.theActualList = temp;
 		}

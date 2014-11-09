@@ -1,8 +1,9 @@
 public class ReturnObjectImpl implements ReturnObject{
 
 	Object Value;
+	boolean containsSomething = false;
 
-	public void setValue(Object valueToAdd){
+	public void ReturnObjectImpl(Object valueToAdd){
 		this.Value = valueToAdd;
 	}
 	public boolean hasError(){
