@@ -3,7 +3,7 @@ public class ReturnObjectImpl implements ReturnObject{
 	Object Value;
 	boolean containsSomething = false;
 
-	public void ReturnObjectImpl(Object valueToAdd){
+	public void setValue(Object valueToAdd){
 		this.Value = valueToAdd;
 	}
 	public boolean hasError(){
