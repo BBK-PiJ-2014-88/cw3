@@ -21,6 +21,8 @@ public class ArrayList implements List{
 	}
 	public ReturnObjectImpl get(int index){
 	}
+	public ReturnObject remove(int index){
+	}
 	public ReturnObjectImpl add(Object item){
 	}
 	public ReturnObjectImpl add(int index, Object item){
