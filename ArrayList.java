@@ -1,11 +1,10 @@
 public class ArrayList implements List{
 	private int size = 0;
 	ReturnObject[] theActualList;
+	//Constructor method below, makes arrayList of 10 ReturnObjects.
 	public void ArrayList(){
-		for (int x = 0, x <
+		theActualList = new ReturnObject[10];
 	}
-
-	ReturnObject ObjectList = null;
 	public boolean isEmpty(){
 		if (this.size == 0){
 			return true;
@@ -15,6 +14,18 @@ public class ArrayList implements List{
 		}
 	}
 	public int size(){
-		return this.length;
+		return this.size;
+	}
+	public ReturnObject get(int index){
+	}
+	public ReturnObject add(Object item){
+	}
+	public ReturnObject add(int index, Object item){
+	}
+	public void isNearlyFull(){
+		if (this.theActualList[theActualList.length - 1].containsSomething == true){
+
+		}
+
 	}
 }
