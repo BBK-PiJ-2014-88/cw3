@@ -1,9 +1,12 @@
 public class ArrayList implements List{
-	private int size = 0;
+	public int size = 0;
 	ReturnObject[] theActualList;
-	//Constructor method below, makes arrayList of 10 ReturnObjects.
+	//Constructor method below, makes arrayList of 10 ReturnObjects and sets all values to null
 	public void ArrayList(){
 		theActualList = new ReturnObject[10];
+		for (int x = 0; x < theActualList.length; x++){
+			theActualList[x] = null;
+		}
 	}
 	public boolean isEmpty(){
 		if (this.size == 0){
@@ -23,8 +26,15 @@ public class ArrayList implements List{
 	public ReturnObject add(int index, Object item){
 	}
 	public void isNearlyFull(){
-		if (this.theActualList[theActualList.length - 1].containsSomething == true){
-
+		if (this.theActualList[this.theActualList.length - 1] != null){  //ArrayList nearly full
+			ReturnObject[] temp = new ReturnObject[(this.theActualList.length) *2];
+			for (int x = 0; x < this.size; x++){
+				temp[x] = this.theActualList[x];
+			}
+			for (int y = this.size; y < temp.length; y++){
+				temp[y] = null;
+			}
+			this.theActualList = temp;
 		}
 
 	}
