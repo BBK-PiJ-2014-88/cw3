@@ -23,13 +23,21 @@ public class ArrayList implements List{
 		return this.size;
 	}
 
+	public int getSize(){
+		int size = 0;
+		while(theActualList[size] != new String("Empty")){
+			size++;
+		}
+		return size;
+	}
+
 	public ReturnObjectImpl get(int index){
 	}
 	public ReturnObjectImpl remove(int index){
 	}
 	public ReturnObjectImpl add(Object item){
 		if (item == null){
-			ReturnObjectImpl nullInserted = new ReturnObjectImpl(1);
+			ReturnObjectImpl nullInserted = new ReturnObjectImpl();
 
 		}
 		this.isNearlyFull();
