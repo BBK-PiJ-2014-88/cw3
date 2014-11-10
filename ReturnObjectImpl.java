@@ -10,17 +10,18 @@ public class ReturnObjectImpl implements ReturnObject{
 
 	public ReturnObjectImpl(Object valueToAdd){
 		this.Value = valueToAdd;
-		this.errorMsg = ErrorMessage.NO_ERROR;
+		this.errorMsg = null;
 	}
 
 	public boolean hasError(){
-		if (errorMsg.equals(ErrorMessage.NO_ERROR)){
+		if (this.errorMsg == null){
 			return false;
 		}
 		else{
 			return true;
 		}
 	}
+
 	public ErrorMessage getError(){
 		if (this.hasError() == false){
 			return ErrorMessage.NO_ERROR;

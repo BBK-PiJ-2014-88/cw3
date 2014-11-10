@@ -35,12 +35,11 @@ public class ArrayList implements List{
 	public ReturnObject add(Object item){
 		if (item == null){
 			ReturnObjectImpl errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-			return nullInsertedReturnObject;
+			return errorObject;
 		}
 		this.isNearlyFull();
 		theActualList[this.size()] = item;
-		ReturnObject result = new ReturnObjectImpl(null);
-		return result;
+		return (new ReturnObjectImpl(null));
 
 	}
 	public ReturnObject add(int index, Object item){
