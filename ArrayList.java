@@ -34,7 +34,7 @@ public class ArrayList implements List{
 	}
 	public ReturnObject add(Object item){
 		if (item == null){
-			ReturnObject nullInsertedReturnObject = new ReturnObjectImpl(null, ErrorMessage.INVALID_ARGUMENT);
+			ReturnObjectImpl errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return nullInsertedReturnObject;
 		}
 		this.isNearlyFull();

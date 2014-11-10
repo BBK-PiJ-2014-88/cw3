@@ -3,12 +3,12 @@ public class ReturnObjectImpl implements ReturnObject{
 	private Object Value;
 	private ErrorMessage errorMsg;
 
-	public void ReturnObjectImpl(Object nullValue, ErrorMessage msg){
+	public ReturnObjectImpl(ErrorMessage msg){
 		this.errorMsg = msg;
-		this.Value = nullValue;
+		this.Value = null;
 	}
 
-	public void ReturnObjectImpl(Object valueToAdd){
+	public ReturnObjectImpl(Object valueToAdd){
 		this.Value = valueToAdd;
 		this.errorMsg = ErrorMessage.NO_ERROR;
 	}
