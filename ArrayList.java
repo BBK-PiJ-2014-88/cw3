@@ -1,5 +1,4 @@
 public class ArrayList implements List{
-	public int size = 0;
 	Object[] theActualList;
 
 	public void ArrayList(){
@@ -11,7 +10,7 @@ public class ArrayList implements List{
 	}
 
 	public boolean isEmpty(){
-		if (this.size == 0){
+		if (this.size() == 0){
 			return true;
 		}
 		else{
@@ -20,16 +19,14 @@ public class ArrayList implements List{
 	}
 
 	public int size(){
-		return this.size;
-	}
-
-	public int getSize(){
 		int size = 0;
 		while(theActualList[size] != new String("Empty")){
 			size++;
 		}
 		return size;
 	}
+
+
 
 	public ReturnObjectImpl get(int index){
 	}
