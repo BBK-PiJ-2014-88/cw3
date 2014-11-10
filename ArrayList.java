@@ -5,8 +5,8 @@ public class ArrayList implements List{
 	public void ArrayList(){
 		theActualList = new Object[10];
 		for (int x = 0; x < theActualList.length; x++){
-			//default value of Object is null. This list cannot hold null values to setting all to empty String
-			theActualList[x] = new String("");
+			//default value of Object is null. This list cannot hold null values so setting all to empty String
+			theActualList[x] = new String("Empty");
 		}
 	}
 
@@ -33,7 +33,9 @@ public class ArrayList implements List{
 	}
 
 	public void isNearlyFull(){
-		if (this.theActualList[this.theActualList.length - 1].containsSomething == true){  //ArrayList nearly full
+		int lengthMinusOne = this.theActualList.length -1;
+		String str = new String("Empty");
+		if (!((this.theActualList[lengthMinusOne]).equals(str))){  //ArrayList nearly full
 			Object[] temp = new Object[(this.theActualList.length) *2];
 			for (int x = 0; x < this.size; x++){
 				temp[x] = this.theActualList[x];
