@@ -3,9 +3,9 @@ public class ReturnObjectImpl implements ReturnObject{
 	private Object Value;
 	private ErrorMessage errorMsg;
 
-	public void ReturnObjectImpl(ErrorMessage msg){
+	public void ReturnObjectImpl(Object nullValue, ErrorMessage msg){
 		this.errorMsg = msg;
-		this.Value = null;
+		this.Value = nullValue;
 	}
 
 	public void ReturnObjectImpl(Object valueToAdd){
