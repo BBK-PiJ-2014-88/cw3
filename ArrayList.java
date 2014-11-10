@@ -45,7 +45,16 @@ public class ArrayList implements List{
 			return errorObject;
 		}
 		else{
-
+			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(theActualList[index]);
+			Object[] temp = new Object[this.theActualList.length];
+			for (int x = 0; x < index; x++){
+				temp[x] = theActualList[x];
+			}
+			for (int y = index+1; y < temp.length; y++){
+				temp[y-1] = theActualList[y];
+			}
+			this.theActualList = temp;
+			return returnObjectWithRemovedElement;
 		}
 	}
 
