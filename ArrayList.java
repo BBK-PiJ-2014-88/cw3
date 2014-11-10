@@ -39,6 +39,8 @@ public class ArrayList implements List{
 		}
 		this.isNearlyFull();
 		theActualList[this.size()] = item;
+		ReturnObject result = new ReturnObjectImpl(new String("empty"));
+		return result;
 
 	}
 	public ReturnObject add(int index, Object item){
@@ -49,10 +51,10 @@ public class ArrayList implements List{
 		String str = new String("Empty");
 		if (!((this.theActualList[lengthMinusOne]).equals(str))){  //ArrayList nearly full
 			Object[] temp = new Object[(this.theActualList.length) *2];
-			for (int x = 0; x < this.size; x++){
+			for (int x = 0; x < this.size(); x++){
 				temp[x] = this.theActualList[x];
 			}
-			for (int y = this.size; y < temp.length; y++){
+			for (int y = this.size(); y < temp.length; y++){
 				temp[y] = new String("");
 			}
 			this.theActualList = temp;

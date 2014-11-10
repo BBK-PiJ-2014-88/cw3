@@ -15,15 +15,22 @@ public class ReturnObjectImpl implements ReturnObject{
 
 	public boolean hasError(){
 		if (errorMsg.equals(ErrorMessage.NO_ERROR)){
-			return true;
+			return false;
 		}
 		else{
-			return false;
+			return true;
 		}
 	}
 	public ErrorMessage getError(){
+		if (this.hasError() == false){
+			return ErrorMessage.NO_ERROR;
+		}
+		else{
+			return this.errorMsg;
+		}
 	}
 	public Object getReturnValue(){
+		return this.Value;
 	}
 
 }
