@@ -33,6 +33,10 @@ public class ArrayList implements List{
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return errorObject;
 		}
+		else if (this.isEmpty() == true){
+			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return errorObject2;
+		}
 		else{
 			ReturnObject returnObjectWithElement = new ReturnObjectImpl(theActualList[index]);
 			return returnObjectWithElement;
@@ -43,6 +47,10 @@ public class ArrayList implements List{
 		if (index < 0 || index >= theActualList.length){
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return errorObject;
+		}
+		else if (this.isEmpty() == true){
+			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return errorObject2;
 		}
 		else{
 			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(theActualList[index]);
