@@ -40,6 +40,13 @@ public class ArrayList implements List{
 
 	}
 	public ReturnObject remove(int index){
+		if (index < 0 || index >= theActualList.length){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObject;
+		}
+		else{
+
+		}
 	}
 
 	public ReturnObject add(int index, Object item){
