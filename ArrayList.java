@@ -29,19 +29,19 @@ public class ArrayList implements List{
 
 
 	public ReturnObject get(int index){
+		if (index < 0 || index >= theActualList.length){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObject;
+		}
+		else{
+			ReturnObject returnObjectWithElement = new ReturnObjectImpl(theActualList[index]);
+			return returnObjectWithElement;
+		}
+
 	}
 	public ReturnObject remove(int index){
 	}
-	public ReturnObject add(Object item){
-		if (item == null){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-			return errorObject;
-		}
-		this.isNearlyFull();
-		theActualList[this.size()] = item;
-		return (new ReturnObjectImpl(null));
 
-	}
 	public ReturnObject add(int index, Object item){
 		if (index < 0 || index >= theActualList.length){
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
@@ -67,6 +67,16 @@ public class ArrayList implements List{
 			this.theActualList[index] = item;
 			return (new ReturnObjectImpl(null));
 		}
+	}
+
+public ReturnObject add(Object item){
+		if (item == null){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+			return errorObject;
+		}
+		this.isNearlyFull();
+		theActualList[this.size()] = item;
+		return (new ReturnObjectImpl(null));
 	}
 
 	public void isNearlyFull(){
