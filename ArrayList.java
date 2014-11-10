@@ -1,5 +1,5 @@
 public class ArrayList implements List{
-	Object[] theActualList;
+	public Object[] theActualList;
 
 	public void ArrayList(){
 		theActualList = new Object[10];
@@ -28,20 +28,20 @@ public class ArrayList implements List{
 
 
 
-	public ReturnObjectImpl get(int index){
+	public ReturnObject get(int index){
 	}
-	public ReturnObjectImpl remove(int index){
+	public ReturnObject remove(int index){
 	}
-	public ReturnObjectImpl add(Object item){
+	public ReturnObject add(Object item){
 		if (item == null){
-			ReturnObjectImpl nullInserted = new ReturnObjectImpl();
-
+			ReturnObjectImpl nullInsertedReturnObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+			return nullInsertedReturnObject;
 		}
 		this.isNearlyFull();
-		theActualList[size] = item;
-		size++;
+		theActualList[this.size()] = item;
+
 	}
-	public ReturnObjectImpl add(int index, Object item){
+	public ReturnObject add(int index, Object item){
 	}
 
 	public void isNearlyFull(){
