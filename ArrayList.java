@@ -28,6 +28,13 @@ public class ArrayList implements List{
 	public ReturnObjectImpl remove(int index){
 	}
 	public ReturnObjectImpl add(Object item){
+		if (item == null){
+			ReturnObjectImpl nullInserted = new ReturnObjectImpl(1);
+
+		}
+		this.isNearlyFull();
+		theActualList[size] = item;
+		size++;
 	}
 	public ReturnObjectImpl add(int index, Object item){
 	}
