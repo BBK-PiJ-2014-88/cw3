@@ -33,6 +33,7 @@ public class ArrayList implements List{
 			if (!(theActualList[size].equals(new String("Empty")))){
 				size++;
 			}
+			position++;
 		}
 		return size;
 	}
