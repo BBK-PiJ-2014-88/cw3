@@ -15,6 +15,9 @@ public class ArrayListTest{
 		arrayListTester.add("Hello");
 		arrayListTester.add("Dude");
 		System.out.println(arrayListTester);
-
+		System.out.println(arrayListTester.add(4,"Hello"));
+		System.out.println(arrayListTester);
+		System.out.println(arrayListTester.get(1));
+		System.out.println(arrayListTester.add(null));
 	}
 }

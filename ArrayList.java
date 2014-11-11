@@ -115,18 +115,17 @@ public ReturnObject add(Object item){
 	}
 
 	public void isNearlyFull(){
-		int lengthMinusOne = this.theActualList.length -2;
-		String str = new String("Empty");
-		if (!((this.theActualList[lengthMinusOne]).equals(str))){  //ArrayList nearly full
+		if (!(this.theActualList[this.theActualList.length - 2].equals(new String("Empty")))){  //ArrayList nearly full
 			Object[] temp = new Object[(this.theActualList.length) *2];
-			for (int x = 0; x < this.size(); x++){
-				temp[x] = this.theActualList[x];
-			}
-			for (int y = this.size(); y < temp.length; y++){
-				temp[y] = new String("");
+			for (int x = 0; x < temp.length; x++){
+				if (x < this.size()){
+					temp[x] = this.theActualList[x];
+				}
+				else{
+					temp[x] = new String("Empty");
+				}
 			}
 			this.theActualList = temp;
 		}
-
 	}
 }
