@@ -1,7 +1,15 @@
 public class ArrayList implements List{
 	public Object[] theActualList;
 
-	public void ArrayList(){
+	public String toString(){
+		String output = "";
+		for (int x = 0; x < theActualList.length; x++){
+			output = output + theActualList[x];
+		}
+		return output;
+	}
+
+	public ArrayList(){
 		theActualList = new Object[10];
 		for (int x = 0; x < theActualList.length; x++){
 			//default value of Object is null. This list cannot hold null values so setting all to empty String
