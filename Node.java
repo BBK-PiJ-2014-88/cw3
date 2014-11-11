@@ -5,4 +5,10 @@ public class Node{
 	public Object getElement(){
 		return this.Element;
 	}
+	public Node(Object objectStoredInNode){
+		this.Element = objectStoredInNode;
+	}
+	public void setNext(Node nextNode){
+		this.next = nextNode;
+	}
 }
