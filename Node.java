@@ -1,12 +1,12 @@
 public class Node{
 	//Wrapper for linkedList Implementation. Holds an Object and points to next element in LinkedList
-	public Object Element;
+	public Object element;
 	public Node next;
 	public Object getElement(){
-		return this.Element;
+		return this.element;
 	}
 	public Node(Object objectStoredInNode){
-		this.Element = objectStoredInNode;
+		this.element = objectStoredInNode;
 		this.next = null;
 	}
 	public void setNext(Node nextNode){
@@ -14,7 +14,7 @@ public class Node{
 	}
 	public String toString(){
 		//Prints Object, useful for testing list
-		return "" + this.Element;
+		return "" + this.element;
 	}
 	public Node getLastNode(){
 		if (this.next == null){
@@ -23,6 +23,13 @@ public class Node{
 		else{
 			return this.next.getLastNode();
 		}
-
+	}
+	public Node getNodeAtIndex(int index){
+		if (index == 0){
+			return this;
+		}
+		else{
+			return this.next.getNodeAtIndex(index - 1);
+		}
 	}
 }

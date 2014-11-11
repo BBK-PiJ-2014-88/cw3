@@ -38,18 +38,9 @@ public class LinkedList implements List{
 			return errorObject2;
 		}
 		else{
-			Object gottenElement = (getNodeAtIndex(index, firstNodeInList)).getElement();
-			ReturnObject returnObjectWithElement = new ReturnObjectImpl(gottenElement);
-			return returnObjectWithElement;
-		}
-	}
+			Object gottenElement = (firstNodeInList.getNodeAtIndex(index)).getElement();
+			return (new ReturnObjectImpl(gottenElement));
 
-	public Node getNodeAtIndex(int index, Node position){  //returns the Node that contains the Object at the index given as parameter
-		if (index == 0){
-			return position;
-		}
-		else{
-			return (getNodeAtIndex(index - 1, position.next));
 		}
 	}
 
@@ -62,10 +53,14 @@ public class LinkedList implements List{
 			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return errorObject2;
 		}
-		else{
-			Node removedNode = getNodeAtIndex(index, firstNodeInList);
+		else if (index == 1){
+			Node removedNode = firstNodeInList.getNodeAtIndex(index);
 			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(removedNode.getElement());
-			(getNodeAtIndex(index - 1, firstNodeInList)).next = getNodeAtIndex(index + 1, firstNodeInList);
+		}
+		else{
+			Node removedNode = firstNodeInList.getNodeAtIndex(index);
+			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(removedNode.getElement());
+			(firstNodeInList.getNodeAtIndex(index - 1)).next = firstNodeInList.getNodeAtIndex(index + 1);
 			return returnObjectWithRemovedElement;
 			//need to edit this later to add special method or else clause if the first node in list is being removed.
 		}
@@ -83,8 +78,8 @@ public class LinkedList implements List{
 		}
 		else{
 			Node newNode = new Node(item);
-			newNode.setNext(getNodeAtIndex(index, firstNodeInList));
-			(getNodeAtIndex(index - 1, firstNodeInList)).setNext(newNode);
+			newNode.setNext(firstNodeInList.getNodeAtIndex(index));
+			(firstNodeInList.getNodeAtIndex(index - 1)).setNext(newNode);
 			return (new ReturnObjectImpl(null));
 		}
 	}
