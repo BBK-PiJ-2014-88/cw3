@@ -34,4 +34,13 @@ public class ReturnObjectImpl implements ReturnObject{
 		return this.Value;
 	}
 
+	public String toString(){
+		if (this.errorMsg != null){
+			return "" + this.errorMsg;
+		}
+		else{
+			return "" + this.Value;
+		}
+	}
+
 }
