@@ -1,4 +1,4 @@
-public class FunctionalArrayList extends ArrayList implements FunctionalList{
+public class FunctionalArrayList extends ArrayList implements FunctionalList {
 
 	public ReturnObject head(){
 		if (this.isEmpty() == true){
@@ -11,6 +11,19 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList{
 	}
 
 	public FunctionalList rest(){
+		if (this.Empty() == true){
+			return new FunctionalArrayList();
+		}
+		else{
+			Object[] temp = new Object[theActualList.length];
+			for (int x = 0; x < temp.length; x++){
+				temp[x] = theActualList[x+1];
+			}
+			FunctionalList newFunctionalList = new ArrayList();
+			newFunctionalList.theActualList = temp;
+			return newFunctionalList;
+		}
+
 	}
 
 }
