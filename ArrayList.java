@@ -27,8 +27,9 @@ public class ArrayList implements List{
 	}
 
 	public int size(){
+		int position = 0;
 		int size = 0;
-		while(size < theActualList.length){
+		while(position < theActualList.length){
 			if (!(theActualList[size].equals(new String("Empty")))){
 				size++;
 			}
