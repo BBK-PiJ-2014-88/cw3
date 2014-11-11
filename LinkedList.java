@@ -37,8 +37,17 @@ public class LinkedList implements List{
 			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return errorObject2;
 		}
+		else{
+			Object gottenElement = getValueAtIndex(index, firstNodeInList);
+			ReturnObject returnObjectWithElement = new ReturnObjectImpl(gottenElement);
+			return returnObjectWithElement;
+		}
+	}
+
+	public Object getValueAtIndex(int index, Node position){
 
 	}
+
 	public ReturnObject remove(int index){
 	}
 	public ReturnObject add(int index, Object item){
