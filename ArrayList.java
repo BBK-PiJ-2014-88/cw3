@@ -90,9 +90,9 @@ public class ArrayList implements List{
 			this.isNearlyFull(); //check if list is nearly full first before moving objects one place to the right to make room for new item
 			Object temp = theActualList[index];
 			Object temp2;
-			for (int x = index; x < theActualList.length; x++){
-				temp2 = theActualList[x + 1];
-				this.theActualList[index + 1] = temp;
+			for (int x = index; x < theActualList.length - 1; x++){
+				temp2 = this.theActualList[x + 1];
+				this.theActualList[x + 1] = temp;
 				temp = temp2;
 			}
 			this.theActualList[index] = item;
