@@ -27,13 +27,12 @@ public class ArrayList implements List{
 	}
 
 	public int size(){
-		int position = 0;
+		//Number of elements in the list are the number of elements not equal to an empty string along length of the list
 		int size = 0;
-		while(position < theActualList.length){
+		for (int x = 0; x < theActualList.length; x++){
 			if (!(theActualList[size].equals(new String("Empty")))){
 				size++;
 			}
-			position++;
 		}
 		return size;
 	}
