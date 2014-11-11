@@ -12,12 +12,15 @@ public class ArrayListTest{
 		System.out.println(arrayListTester.remove(-1));
 		System.out.println(arrayListTester.remove(20));
 		System.out.println(arrayListTester.get(10));
-		arrayListTester.add("Hello");
-		arrayListTester.add("Dude");
+		System.out.println(arrayListTester.add("Hello"));
+		System.out.println(arrayListTester.add("Dude"));
 		System.out.println(arrayListTester);
 		System.out.println(arrayListTester.add(4,"Hello"));
 		System.out.println(arrayListTester);
 		System.out.println(arrayListTester.get(1));
 		System.out.println(arrayListTester.add(null));
+		Matrix testMatrix = new Matrix(5,6);
+		System.out.println(arrayListTester.add(testMatrix));
+		System.out.println(arrayListTester);
 	}
 }
