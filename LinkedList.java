@@ -38,23 +38,39 @@ public class LinkedList implements List{
 			return errorObject2;
 		}
 		else{
-			Object gottenElement = getValueAtIndex(index, firstNodeInList);
+			Object gottenElement = (getNodeAtIndex(index, firstNodeInList)).getElement();
 			ReturnObject returnObjectWithElement = new ReturnObjectImpl(gottenElement);
 			return returnObjectWithElement;
 		}
 	}
 
-	public Object getValueAtIndex(int index, Node position){
+	public Node getNodeAtIndex(int index, Node position){
 		if (index == 0){
-			return position.getElement();
+			return position;
 		}
 		else{
-			return (getValueAtIndex(index - 1, position.next));
+			return (getNodeAtIndex(index - 1, position.next));
 		}
 	}
 
 	public ReturnObject remove(int index){
+		if (index < 0 || index >= this.size()){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObject;
+		}
+		else if (this.isEmpty() == true){
+			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return errorObject2;
+		}
+		else{
+			Node removedNode = getNodeAtIndex(index, firstNodeInList);
+			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(removedNode.getElement());
+			(getNodeAtIndex(index - 1, firstNodeInList)).next = getNodeAtIndex(index + 1, firstNodeInList);
+			return returnObjectWithRemovedElement;
+		}
+
 	}
+
 	public ReturnObject add(int index, Object item){
 	}
 	public ReturnObject add(Object item){
