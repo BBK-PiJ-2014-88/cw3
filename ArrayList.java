@@ -72,6 +72,7 @@ public class ArrayList implements List{
 			for (int y = index+1; y < temp.length; y++){
 				temp[y-1] = theActualList[y];
 			}
+			temp[temp.length -1] = new String("Empty");
 			this.theActualList = temp;
 			return returnObjectWithRemovedElement;
 		}
