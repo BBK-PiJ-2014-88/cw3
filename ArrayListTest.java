@@ -35,5 +35,14 @@ public class ArrayListTest{
 		System.out.println(arrayListTester);
 		arrayListTester.remove(0);
 		System.out.println(arrayListTester);
+		System.out.println(arrayListTester.add(4,"four"));
+		System.out.println(arrayListTester.add(4,"four"));
+		System.out.println(arrayListTester.add(4,"four"));
+		System.out.println(arrayListTester);
+		System.out.println(arrayListTester.remove(2));
+		arrayListTester.add("final");
+		arrayListTester.remove(2);
+		arrayListTester.remove(2);
+		System.out.println(arrayListTester);
 	}
 }
