@@ -67,12 +67,24 @@ public class LinkedList implements List{
 			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(removedNode.getElement());
 			(getNodeAtIndex(index - 1, firstNodeInList)).next = getNodeAtIndex(index + 1, firstNodeInList);
 			return returnObjectWithRemovedElement;
+			//need to edit this later to add special method or else clause if the first node in list is being removed.
 		}
 
 	}
 
 	public ReturnObject add(int index, Object item){
+		if (index < 0 || index >= this.size()){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObject;
+		}
+		else if (item == null){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+			return errorObject;
+		}
+
+
 	}
+
 	public ReturnObject add(Object item){
 
 	}
