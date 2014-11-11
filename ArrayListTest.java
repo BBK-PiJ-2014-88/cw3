@@ -17,7 +17,6 @@ public class ArrayListTest{
 		System.out.println(arrayListTester);
 		System.out.println(arrayListTester.add(4,"Hello"));
 		System.out.println(arrayListTester);
-		System.out.println(arrayListTester.get(1));
 		System.out.println(arrayListTester.add(null));
 		Matrix testMatrix = new Matrix(5,6);
 		System.out.println(arrayListTester.add(testMatrix));
@@ -31,6 +30,10 @@ public class ArrayListTest{
 		arrayListTester.add("sometimes");
 		arrayListTester.add("they");
 		arrayListTester.add("suck");
+		System.out.println(arrayListTester);
+		arrayListTester.remove(2);
+		System.out.println(arrayListTester);
+		arrayListTester.remove(0);
 		System.out.println(arrayListTester);
 	}
 }
