@@ -44,7 +44,7 @@ public class LinkedList implements List{
 		}
 	}
 
-	public Node getNodeAtIndex(int index, Node position){
+	public Node getNodeAtIndex(int index, Node position){  //returns the Node that contains the Object at the index given as parameter
 		if (index == 0){
 			return position;
 		}
@@ -81,11 +81,24 @@ public class LinkedList implements List{
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return errorObject;
 		}
-
-
+		else{
+			Node newNode = new Node(item);
+			newNode.setNext(getNodeAtIndex(index, firstNodeInList));
+			(getNodeAtIndex(index - 1, firstNodeInList)).setNext(newNode);
+			return (new ReturnObjectImpl(null));
+		}
 	}
 
 	public ReturnObject add(Object item){
-
+		if (item == null){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
+			return errorObject;
+		}
+		else if(this.isEmpty == true ){
+		}
 	}
+
+	public Node getLastNode(){
+	}
+
 }
