@@ -56,6 +56,8 @@ public class LinkedList implements List{
 		else if (index == 1){
 			Node removedNode = firstNodeInList.getNodeAtIndex(index);
 			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(removedNode.getElement());
+			firstNodeInList = firstNodeInList.next;
+			return returnObjectWithRemovedElement;
 		}
 		else{
 			Node removedNode = firstNodeInList.getNodeAtIndex(index);
