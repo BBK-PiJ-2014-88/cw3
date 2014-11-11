@@ -45,6 +45,7 @@ public class LinkedList implements List{
 	}
 
 	public ReturnObject remove(int index){
+		Node removedNode = firstNodeInList.getNodeAtIndex(index);
 		if (index < 0 || index >= this.size()){
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return errorObject;
@@ -54,16 +55,12 @@ public class LinkedList implements List{
 			return errorObject2;
 		}
 		else if (index == 1){
-			Node removedNode = firstNodeInList.getNodeAtIndex(index);
-			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(removedNode.getElement());
 			firstNodeInList = firstNodeInList.next;
-			return returnObjectWithRemovedElement;
+			return new ReturnObjectImpl(removedNode.getElement());
 		}
 		else{
-			Node removedNode = firstNodeInList.getNodeAtIndex(index);
-			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(removedNode.getElement());
-			(firstNodeInList.getNodeAtIndex(index - 1)).next = firstNodeInList.getNodeAtIndex(index + 1);
-			return returnObjectWithRemovedElement;
+			(firstNodeInList.getNodeAtIndex(index - 1)).setNext(firstNodeInList.getNodeAtIndex(index + 1));
+			return new ReturnObjectImpl(removedNode.getElement());
 			//need to edit this later to add special method or else clause if the first node in list is being removed.
 		}
 
