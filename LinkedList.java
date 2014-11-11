@@ -49,7 +49,7 @@ public class LinkedList implements List{
 			return position.getElement();
 		}
 		else{
-			getValueAtIndex(index - 1, position.next);
+			return (getValueAtIndex(index - 1, position.next));
 		}
 	}
 
