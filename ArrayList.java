@@ -1,20 +1,20 @@
 public class ArrayList implements List{
 	public Object[] theActualList;
 
-	public String toString(){
-		String output = "";
-		for (int x = 0; x < theActualList.length; x++){
-			output = output + " " + theActualList[x];
-		}
-		return output;
-	}
-
 	public ArrayList(){
 		theActualList = new Object[10];
 		for (int x = 0; x < theActualList.length; x++){
 			//default value of Object is null. This list cannot hold null values so setting all to empty String
 			theActualList[x] = new String("Empty");
 		}
+	}
+
+	public String toString(){    //used this method for testing
+		String output = "";
+		for (int x = 0; x < theActualList.length; x++){
+			output = output + " " + theActualList[x];
+		}
+		return output;
 	}
 
 	public boolean isEmpty(){
@@ -28,8 +28,10 @@ public class ArrayList implements List{
 
 	public int size(){
 		int size = 0;
-		while(!(theActualList[size].equals(new String("Empty"))) && size < theActualList.length){
-			size++;
+		while(size < theActualList.length){
+			if (!(theActualList[size].equals(new String("Empty")))){
+				size++;
+			}
 		}
 		return size;
 	}
