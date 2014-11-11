@@ -86,12 +86,8 @@ public class ArrayList implements List{
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return errorObject;
 		}
-		else if(this.theActualList[index].equals(new String("Empty"))){
-			this.theActualList[index] = item;
-			return (new ReturnObjectImpl(null)); //returning empty ReturnObject as operation was successful
-		}
-		else{ //this means there is already an object in the list at that index so will need to rearrange objects to make room
-			this.isNearlyFull(); //check if list is nearly full first before moving objects one place to the right
+		else{
+			this.isNearlyFull(); //check if list is nearly full first before moving objects one place to the right to make room for new item
 			Object temp = theActualList[index];
 			Object temp2;
 			for (int x = index; x < theActualList.length; x++){

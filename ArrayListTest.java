@@ -22,5 +22,15 @@ public class ArrayListTest{
 		Matrix testMatrix = new Matrix(5,6);
 		System.out.println(arrayListTester.add(testMatrix));
 		System.out.println(arrayListTester);
+		arrayListTester.add("Butterflies");
+		arrayListTester.add("are");
+		arrayListTester.add("awesome");
+		arrayListTester.add("in");
+		arrayListTester.add("summertime");
+		arrayListTester.add("but");
+		arrayListTester.add("sometimes");
+		arrayListTester.add("they");
+		arrayListTester.add("suck");
+		System.out.println(arrayListTester);
 	}
 }
