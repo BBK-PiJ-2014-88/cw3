@@ -1,5 +1,12 @@
 public class LinkedList implements List{
+	public Node firstNodeInList == null;
 	public boolean isEmpty(){
+		if (firstNodeInList == null){
+			return true;
+		}
+		else{
+			return false;
+		}
 	}
 	public int size(){
 	}
