@@ -45,7 +45,12 @@ public class LinkedList implements List{
 	}
 
 	public Object getValueAtIndex(int index, Node position){
-
+		if (index == 0){
+			return position.getElement();
+		}
+		else{
+			getValueAtIndex(index - 1, position.next);
+		}
 	}
 
 	public ReturnObject remove(int index){
