@@ -90,15 +90,20 @@ public class LinkedList implements List{
 	}
 
 	public ReturnObject add(Object item){
+		Node newNode = new Node(item);
 		if (item == null){
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return errorObject;
 		}
-		else if(this.isEmpty == true ){
+		else if(this.isEmpty() == true ){
+			firstNodeInList = newNode;
+			return (new ReturnObjectImpl(null));
+		}
+		else{
+			(firstNodeInList.getLastNode()).setNext(newNode);
+			return (new ReturnObjectImpl(null));
 		}
 	}
 
-	public Node getLastNode(){
-	}
 
 }

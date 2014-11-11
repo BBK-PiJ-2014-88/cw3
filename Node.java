@@ -7,8 +7,22 @@ public class Node{
 	}
 	public Node(Object objectStoredInNode){
 		this.Element = objectStoredInNode;
+		this.next = null;
 	}
 	public void setNext(Node nextNode){
 		this.next = nextNode;
+	}
+	public String toString(){
+		//Prints Object, useful for testing list
+		return "" + this.Element;
+	}
+	public Node getLastNode(){
+		if (this.next == null){
+			return this;
+		}
+		else{
+			return this.next.getLastNode();
+		}
+
 	}
 }
