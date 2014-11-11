@@ -40,7 +40,7 @@ public class ArrayList implements List{
 
 
 	public ReturnObject get(int index){
-		if (index < 0 || index >= theActualList.size()){
+		if (index < 0 || index >= this.size()){
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return errorObject;
 		}
@@ -55,7 +55,7 @@ public class ArrayList implements List{
 
 	}
 	public ReturnObject remove(int index){
-		if (index < 0 || index >= theActualList.size()){
+		if (index < 0 || index >= this.size()){
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return errorObject;
 		}
@@ -78,7 +78,7 @@ public class ArrayList implements List{
 	}
 
 	public ReturnObject add(int index, Object item){
-		if (index < 0 || index >= theActualList.size()){
+		if (index < 0 || index >= this.size()){
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return errorObject;
 		}
