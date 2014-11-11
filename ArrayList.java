@@ -4,7 +4,7 @@ public class ArrayList implements List{
 	public String toString(){
 		String output = "";
 		for (int x = 0; x < theActualList.length; x++){
-			output = output + theActualList[x];
+			output = output + " " + theActualList[x];
 		}
 		return output;
 	}
@@ -28,7 +28,7 @@ public class ArrayList implements List{
 
 	public int size(){
 		int size = 0;
-		while(theActualList[size] != new String("Empty")){
+		while(!(theActualList[size].equals(new String("Empty"))) && size < theActualList.length){
 			size++;
 		}
 		return size;
