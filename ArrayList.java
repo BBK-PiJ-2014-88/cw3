@@ -9,6 +9,10 @@ public class ArrayList implements List{
 		}
 	}
 
+	public void theActualListSetter(Object[] theActualList){
+		this.theActualList = theActualList;
+	}
+
 	public String toString(){    //used this method for testing
 		String output = "";
 		for (int x = 0; x < theActualList.length; x++){
@@ -103,7 +107,7 @@ public class ArrayList implements List{
 		}
 	}
 
-public ReturnObject add(Object item){
+	public ReturnObject add(Object item){
 		if (item == null){
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return errorObject;

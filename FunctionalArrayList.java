@@ -19,11 +19,10 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 			for (int x = 0; x < temp.length; x++){
 				temp[x] = theActualList[x+1];
 			}
-			FunctionalList newFunctionalList = new FunctionalArrayList();
-			newFunctionalList.theActualList = temp;
+			FunctionalArrayList newFunctionalList = new FunctionalArrayList();
+			newFunctionalList.theActualListSetter(temp);
 			return newFunctionalList;
 		}
-
 	}
 
 }
