@@ -29,6 +29,15 @@ public class LinkedList implements List{
 	}
 
 	public ReturnObject get(int index){
+		if (index < 0 || index >= this.size()){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObject;
+		}
+		else if (this.isEmpty() == true){
+			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
+			return errorObject2;
+		}
+
 	}
 	public ReturnObject remove(int index){
 	}
