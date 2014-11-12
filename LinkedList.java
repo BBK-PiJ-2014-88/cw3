@@ -10,6 +10,15 @@ public class LinkedList implements List{
 		}
 	}
 
+	public String toString(){    //used this method for testing
+		String output = "";
+		for (int x = 0; x < size(); x++){
+			output = output + " " + (this.get(x)).getReturnValue();
+		}
+		return output;
+	}
+
+
 	public int size(){
 		if (firstNodeInList == null){
 			return 0;
