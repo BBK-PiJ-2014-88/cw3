@@ -87,10 +87,52 @@ public class ListTests{
 		ErrorMessage output = (arrayListTester.get(0).getError());
 		assertEquals(output, expected);
 	}
+	@Test
+	public void checkGetOnEmptyLinkedList(){
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
+		ErrorMessage output = (linkedListTester.get(0).getError());
+		assertEquals(output, expected);
+	}
 	//Testing get method with invalid index
-
+	@Test
+	public void checkGetInvalidIndexArrayList(){
+		arrayListTester.add("Not empty Yay");
+		ErrorMessage expected = ErrorMessage.INDEX_OUT_OF_BOUNDS;
+		ErrorMessage output = (arrayListTester.get(3).getError());
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkGetInvalidIndexLinkedList(){
+		linkedListTester.add("Not empty Yay");
+		ErrorMessage expected = ErrorMessage.INDEX_OUT_OF_BOUNDS;
+		ErrorMessage output = (linkedListTester.get(5).getError());
+		assertEquals(output, expected);
+	}
 	//Testing get method on NonEmpty structure with a valid index
-
+	@Test
+	public void checkGetArrayList(){
+		arrayListTester.add("Not empty Yay");
+		arrayListTester.add("Not empty Yay1");
+		arrayListTester.add("Not empty Yay2");
+		arrayListTester.add("Not empty Yay3");
+		arrayListTester.add("Not empty Yay4");
+		arrayListTester.add("Not empty Yay5");
+		Object expected = "Not empty Yay3";
+		Object output = (arrayListTester.get(3)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkGetLinkedList(){
+		linkedListTester.add("Not empty Yay");
+		linkedListTester.add("Not empty Yay1");
+		linkedListTester.add("Not empty Yay2");
+		linkedListTester.add("Not empty Yay3");
+		linkedListTester.add("Not empty Yay4");
+		linkedListTester.add("Not empty Yay5");
+		Object expected = "Not empty Yay3";
+		Object output = (linkedListTester.get(3)).getReturnValue();
+		assertEquals(output, expected);
+	}
 
 
 }

@@ -11,7 +11,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 	}
 
 	public FunctionalList rest(){
-		if (this.isEmpty() == true){
+		if (isEmpty() == true){
 			return new FunctionalArrayList();
 		}
 		else{
@@ -20,7 +20,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 				temp[x] = theActualList[x+1];
 			}
 			FunctionalArrayList newFunctionalList = new FunctionalArrayList();
-			newFunctionalList.theActualListSetter(temp);
+			newFunctionalList.theActualList = temp;
 			return newFunctionalList;
 		}
 	}
