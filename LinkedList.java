@@ -54,7 +54,6 @@ public class LinkedList implements List{
 	}
 
 	public ReturnObject remove(int index){
-		Node removedNode = firstNodeInList.getNodeAtIndex(index);
 		if (this.isEmpty() == true){
 			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return errorObject2;
@@ -64,10 +63,12 @@ public class LinkedList implements List{
 			return errorObject;
 		}
 		else if (index == 1){
+			Node removedNode = firstNodeInList.getNodeAtIndex(index);
 			firstNodeInList = firstNodeInList.next;
 			return new ReturnObjectImpl(removedNode.getElement());
 		}
 		else{
+			Node removedNode = firstNodeInList.getNodeAtIndex(index);
 			(firstNodeInList.getNodeAtIndex(index - 1)).setNext(firstNodeInList.getNodeAtIndex(index + 1));
 			return new ReturnObjectImpl(removedNode.getElement());
 			//need to edit this later to add special method or else clause if the first node in list is being removed.
