@@ -9,9 +9,7 @@ public class ArrayList implements List{
 		}
 	}
 
-	public void theActualListSetter(Object[] theActualList){
-		this.theActualList = theActualList;
-	}
+
 
 	public String toString(){    //used this method for testing
 		String output = "";

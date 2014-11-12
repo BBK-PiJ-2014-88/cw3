@@ -1,7 +1,7 @@
 public class FunctionalArrayList extends ArrayList implements FunctionalList {
 
 	public ReturnObject head(){
-		if (this.isEmpty() == true){
+		if (isEmpty() == true){
 			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return errorObject2;
 		}
