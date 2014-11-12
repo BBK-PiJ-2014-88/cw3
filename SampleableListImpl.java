@@ -23,11 +23,14 @@ public class SampleableListImpl implements SampleableList{
 	}
 	public SampleableList sample(){
 		if (isEmpty() == true){
-			return (new SampleableListImpl);
+			return (new SampleableListImpl());
 		}
 		else{
 			SampleableList newSampleableList = new SampleableListImpl();
-			for (int x = 0; x <
+			for (int x = 0; x < this.size(); x + 2){
+				newSampleableList.add(this.get(x));
+			}
+			return newSampleableList;
 		}
 	}
 }
