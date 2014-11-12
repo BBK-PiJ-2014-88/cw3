@@ -44,5 +44,21 @@ public class ArrayListTest{
 		arrayListTester.remove(2);
 		arrayListTester.remove(2);
 		System.out.println(arrayListTester);
+
+		System.out.println("Linked List tests start here");
+		LinkedList linkedListTester = new LinkedList();
+			linkedListTester.add("are");
+			linkedListTester.add("awesome");
+			linkedListTester.add("in");
+			linkedListTester.add("summertime");
+			linkedListTester.add("but");
+			linkedListTester.add("sometimes");
+			linkedListTester.add("they");
+			linkedListTester.add("suck");
+			System.out.println(linkedListTester);
+			linkedListTester.add(new Matrix(1,1));
+			System.out.println(linkedListTester);
+			linkedListTester.add(4, "four");
+			System.out.println(linkedListTester);
 	}
 }
