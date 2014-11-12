@@ -27,7 +27,7 @@ public class SampleableListImpl implements SampleableList{
 		}
 		else{
 			SampleableList newSampleableList = new SampleableListImpl();
-			for (int x = 0; x < this.size(); x + 2){
+			for (int x = 0; x < this.size(); x = x + 2){
 				newSampleableList.add(this.get(x));
 			}
 			return newSampleableList;
