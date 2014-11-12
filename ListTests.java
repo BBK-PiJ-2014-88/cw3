@@ -4,12 +4,14 @@ import static org.junit.Assert.*;
 public class ListTests{
 	private FunctionalArrayList arrayListTester;
 	private FunctionalLinkedList linkedListTester;
+	private SampleableListImpl sampleableListTester;
 
 	//Testing isEmpty() with an empty list
 	@Before
 	public void buildUp(){
 		arrayListTester = new FunctionalArrayList();
 		linkedListTester = new FunctionalLinkedList();
+		sampleableListTester = new SampleableListImpl();
 	}
 	@Test
 	public void testIsEmptyArrayOnEmptyList(){
@@ -214,7 +216,7 @@ public class ListTests{
 	}
 
 	//Checking Functional List functionality below
-
+	//Testing head() method on EmptyList
 	@Test
 	public void checkHeadOnEmptyArrayList(){
 		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
@@ -227,6 +229,102 @@ public class ListTests{
 		ErrorMessage output = (linkedListTester.head()).getError();
 		assertEquals(output, expected);
 	}
+	//Checking head() method on non-empty List
+	@Test
+	public void checkHeadArrayList(){
+		arrayListTester.add("Not empty Yay");
+		arrayListTester.add("Not empty Yay1");
+		arrayListTester.add("Not empty Yay2");
+		arrayListTester.add("Not empty Yay3");
+		arrayListTester.add("Not empty Yay4");
+		arrayListTester.add("Not empty Yay5");
+		Object expected = "Not empty Yay";
+		Object output = (arrayListTester.head()).getReturnValue();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkHeadLinkedList(){
+		linkedListTester.add("Not empty Yay");
+		linkedListTester.add("Not empty Yay1");
+		linkedListTester.add("Not empty Yay2");
+		linkedListTester.add("Not empty Yay3");
+		linkedListTester.add("Not empty Yay4");
+		linkedListTester.add("Not empty Yay5");
+		Object expected = "Not empty Yay";
+		Object output = (linkedListTester.head()).getReturnValue();
+		assertEquals(output, expected);
+	}
 
+	//SampleAbleList tests begin here
+	//Following set of tests check that sampleableList has correctly extended List
 
+	@Test
+	public void testIsEmptySampleableOnEmptyList(){
+		boolean expected = true;
+		boolean output = sampleableListTester.isEmpty();
+		assertEquals(output, expected);
+	}
+
+	@Test
+	public void testIsEmptySampleAbleOnNonEmptyList(){
+		sampleableListTester.add("hello");
+		boolean expected = false;
+		boolean output = sampleableListTester.isEmpty();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkSizeOnEmptySampleableList(){
+		int expected = 0;
+		int output = sampleableListTester.size();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkSizeOnNonEmptySampleableList(){
+		sampleableListTester.add("hello");
+		sampleableListTester.add("what");
+		sampleableListTester.add("is");
+		sampleableListTester.add("this");
+		sampleableListTester.add("madness");
+		sampleableListTester.add("hello");
+		int expected = 6;
+		int output = sampleableListTester.size();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkGetOnEmptySampleableList(){
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
+		ErrorMessage output = (sampleableListTester.get(0).getError());
+		assertEquals(output, expected);
+	}
+	public void checkGetInvalidIndexSampleableList(){
+		sampleableListTester.add("Not empty Yay");
+		ErrorMessage expected = ErrorMessage.INDEX_OUT_OF_BOUNDS;
+		ErrorMessage output = (sampleableListTester.get(3).getError());
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkRemoveSampleableList(){
+		sampleableListTester.add("Not empty Yay");
+		sampleableListTester.add("Not empty Yay1");
+		sampleableListTester.add("Not empty Yay2");
+		sampleableListTester.add("Not empty Yay3");
+		sampleableListTester.add("Not empty Yay4");
+		sampleableListTester.add("Not empty Yay5");
+		Object expected = "Not empty Yay4";
+		Object output = (sampleableListTester.remove(4)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkAddIndexSampleableList(){
+		sampleableListTester.add("Not empty Yay");
+		sampleableListTester.add("Not empty Yay1");
+		sampleableListTester.add("Not empty Yay2");
+		sampleableListTester.add("Not empty Yay3");
+		sampleableListTester.add("Not empty Yay4");
+		sampleableListTester.add("Not empty Yay5");
+		arrayListTester.add(4, "New Object");
+		Object expected = "New Object";
+		Object output = (sampleableListTester.get(4)).getReturnValue();
+		assertEquals(output, expected);
+	}
 }
