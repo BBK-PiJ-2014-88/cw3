@@ -40,4 +40,44 @@ public class ListTests{
 		assertEquals(output, expected);
 	}
 
+	//Tests size() method on empty list
+	@Test
+	public void checkSizeOnEmptyArrayList(){
+		int expected = 0;
+		int output = arrayListTester.size();
+		assertEquals(output, expected);
+	}
+
+	@Test
+	public void checkSizeOnEmptyLinkedList(){
+		int expected = 0;
+		int output = linkedListTester.size();
+		assertEquals(output, expected);
+	}
+
+	//Tests size() method on non-empty List
+	@Test
+	public void checkSizeOnNonEmptyArrayList(){
+		arrayListTester.add("hello");
+		arrayListTester.add("what");
+		arrayListTester.add("is");
+		arrayListTester.add("this");
+		arrayListTester.add("madness");
+		arrayListTester.add("hello");
+		int expected = 6;
+		int output = arrayListTester.size();
+		assertEquals(output, expected);
+	}
+
+	@Test
+	public void checkSizeOnNonEmptyLinkedList(){
+		linkedListTester.add("Goodbye");
+		linkedListTester.add("cruel");
+		linkedListTester.add("world");
+		linkedListTester.add("Goodbye");
+		int expected = 4;
+		int output = linkedListTester.size();
+		assertEquals(output, expected);
+	}
+
 }
