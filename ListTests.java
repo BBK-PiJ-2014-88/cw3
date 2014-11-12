@@ -338,14 +338,14 @@ public class ListTests{
 		sampleableListTester.add("5");
 		sampleableListTester.add("6");
 		sampleableListTester.add("7");
-		SampleableListImpl temp = sampleableListTester.sample();
-		int[] comparer = {"1","3","5","7"};
-		int[] comparer2;
+		SampleableList temp = sampleableListTester.sample();
+		Object[] comparer = {"1","3","5","7"};
+		Object[] comparer2;
 		for (int x = 0; x < temp.size(); x++){
-			comparer2[x] = temp[x];
+			comparer2[x] = (temp.get(x)).getReturnValue();
 		}
-		int[] expected = comparer;
-		int[] output = comparer2;
+		Object[] expected = comparer;
+		Object[] output = comparer2;
 		assertEquals(output, expected);
 	}
 
