@@ -322,9 +322,31 @@ public class ListTests{
 		sampleableListTester.add("Not empty Yay3");
 		sampleableListTester.add("Not empty Yay4");
 		sampleableListTester.add("Not empty Yay5");
-		arrayListTester.add(4, "New Object");
+		sampleableListTester.add(4, "New Object");
 		Object expected = "New Object";
 		Object output = (sampleableListTester.get(4)).getReturnValue();
 		assertEquals(output, expected);
 	}
+
+	//The next Test will check that the sample() method works
+	@Test
+	public void checkSampleMethod(){
+		sampleableListTester.add("1");
+		sampleableListTester.add("2");
+		sampleableListTester.add("3");
+		sampleableListTester.add("4");
+		sampleableListTester.add("5");
+		sampleableListTester.add("6");
+		sampleableListTester.add("7");
+		SampleableListImpl temp = sampleableListTester.sample();
+		int[] comparer = {"1","3","5","7"};
+		int[] comparer2;
+		for (int x = 0; x < temp.size(); x++){
+			comparer2[x] = temp[x];
+		}
+		int[] expected = comparer;
+		int[] output = comparer2;
+		assertEquals(output, expected);
+	}
+
 }
