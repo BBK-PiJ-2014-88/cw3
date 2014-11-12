@@ -9,8 +9,6 @@ public class ArrayList implements List{
 		}
 	}
 
-
-
 	public String toString(){    //used this method for testing
 		String output = "";
 		for (int x = 0; x < theActualList.length; x++){
@@ -42,13 +40,13 @@ public class ArrayList implements List{
 
 
 	public ReturnObject get(int index){
-		if (index < 0 || index >= this.size()){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
-		}
-		else if (this.isEmpty() == true){
+		if (this.isEmpty() == true){
 			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return errorObject2;
+		}
+		else if (index < 0 || index >= this.size()){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObject;
 		}
 		else{
 			ReturnObject returnObjectWithElement = new ReturnObjectImpl(theActualList[index]);
@@ -57,13 +55,13 @@ public class ArrayList implements List{
 
 	}
 	public ReturnObject remove(int index){
-		if (index < 0 || index >= this.size()){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
-		}
-		else if (this.isEmpty() == true){
+		if (this.isEmpty() == true){
 			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return errorObject2;
+		}
+		else if (index < 0 || index >= this.size()){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObject;
 		}
 		else{
 			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(theActualList[index]);

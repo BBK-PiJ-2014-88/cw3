@@ -29,13 +29,13 @@ public class LinkedList implements List{
 	}
 
 	public ReturnObject get(int index){
-		if (index < 0 || index >= this.size()){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
-		}
-		else if (this.isEmpty() == true){
+		if (this.isEmpty() == true){
 			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return errorObject2;
+		}
+		else if (index < 0 || index >= this.size()){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObject;
 		}
 		else{
 			Object gottenElement = (firstNodeInList.getNodeAtIndex(index)).getElement();
@@ -46,13 +46,13 @@ public class LinkedList implements List{
 
 	public ReturnObject remove(int index){
 		Node removedNode = firstNodeInList.getNodeAtIndex(index);
-		if (index < 0 || index >= this.size()){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
-		}
-		else if (this.isEmpty() == true){
+		if (this.isEmpty() == true){
 			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
 			return errorObject2;
+		}
+		else if (index < 0 || index >= this.size()){
+			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
+			return errorObject;
 		}
 		else if (index == 1){
 			firstNodeInList = firstNodeInList.next;
