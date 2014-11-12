@@ -213,5 +213,20 @@ public class ListTests{
 		assertEquals(output, expected);
 	}
 
+	//Checking Functional List functionality below
+
+	@Test
+	public void checkHeadOnEmptyArrayList(){
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
+		Object output = (arrayListTester.head()).getError();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkHeadOnEmptyLinkedList(){
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
+		ErrorMessage output = (linkedListTester.head()).getError();
+		assertEquals(output, expected);
+	}
+
 
 }
