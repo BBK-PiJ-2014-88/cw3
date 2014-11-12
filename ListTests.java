@@ -160,27 +160,56 @@ public class ListTests{
 	}
 	//Tests Remove method has removed Object from list correctly by using get method to check new value at index
 	@Test
-	public void checkRemoveArrayList(){
+	public void checkRemove2ArrayList(){
 		arrayListTester.add("Not empty Yay");
 		arrayListTester.add("Not empty Yay1");
 		arrayListTester.add("Not empty Yay2");
 		arrayListTester.add("Not empty Yay3");
 		arrayListTester.add("Not empty Yay4");
 		arrayListTester.add("Not empty Yay5");
-		Object expected = "Not empty Yay4";
-		Object output = (arrayListTester.remove(4)).getReturnValue();
+		arrayListTester.remove(4);
+		Object expected = "Not empty Yay5";
+		Object output = (arrayListTester.get(4)).getReturnValue();
 		assertEquals(output, expected);
 	}
 	@Test
-	public void checkRemoveLinkedList(){
+	public void checkRemove2LinkedList(){
 		linkedListTester.add("Not empty Yay");
 		linkedListTester.add("Not empty Yay1");
 		linkedListTester.add("Not empty Yay2");
 		linkedListTester.add("Not empty Yay3");
 		linkedListTester.add("Not empty Yay4");
 		linkedListTester.add("Not empty Yay5");
-		Object expected = "Not empty Yay4";
-		Object output = (linkedListTester.remove(4)).getReturnValue();
+		linkedListTester.remove(4);
+		Object expected = "Not empty Yay5";
+		Object output = (linkedListTester.get(4)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	// Tests adding a value into a position in the list using an index
+	@Test
+	public void checkAddIndexArrayList(){
+		arrayListTester.add("Not empty Yay");
+		arrayListTester.add("Not empty Yay1");
+		arrayListTester.add("Not empty Yay2");
+		arrayListTester.add("Not empty Yay3");
+		arrayListTester.add("Not empty Yay4");
+		arrayListTester.add("Not empty Yay5");
+		arrayListTester.add(4, "New Object");
+		Object expected = "New Object";
+		Object output = (arrayListTester.get(4)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkAddIndexLinkedList(){
+		linkedListTester.add("Not empty Yay");
+		linkedListTester.add("Not empty Yay1");
+		linkedListTester.add("Not empty Yay2");
+		linkedListTester.add("Not empty Yay3");
+		linkedListTester.add("Not empty Yay4");
+		linkedListTester.add("Not empty Yay5");
+		linkedListTester.add(4, "New Object");
+		Object expected = "New Object";
+		Object output = (linkedListTester.get(4)).getReturnValue();
 		assertEquals(output, expected);
 	}
 
