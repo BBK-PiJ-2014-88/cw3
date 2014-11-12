@@ -3,7 +3,7 @@ public class StackImpl extends AbstractStack implements Stack{
 		super(list);
 	}
 	public boolean isEmpty(){
-		return internalList.getEmpty();
+		return internalList.isEmpty();
 	}
 	public int size(){
 		return internalList.size();
