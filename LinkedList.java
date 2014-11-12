@@ -69,7 +69,7 @@ public class LinkedList implements List{
 		}
 		else{
 			Node removedNode = firstNodeInList.getNodeAtIndex(index);
-			if ((firstNodeInList.getNodeAtIndex(index + 1)) != null){
+			if (index != this.size() -1){
 				(firstNodeInList.getNodeAtIndex(index - 1)).setNext(firstNodeInList.getNodeAtIndex(index + 1));
 				return new ReturnObjectImpl(removedNode.getElement());
 			}
