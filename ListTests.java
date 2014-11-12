@@ -80,4 +80,17 @@ public class ListTests{
 		assertEquals(output, expected);
 	}
 
+	//Testing get method on empty structure
+	@Test
+	public void checkGetOnEmptyArrayList(){
+		ErrorMessage expected = ErrorMessage.EMPTY_STRUCTURE;
+		ErrorMessage output = (arrayListTester.get(0).getError());
+		assertEquals(output, expected);
+	}
+	//Testing get method with invalid index
+
+	//Testing get method on NonEmpty structure with a valid index
+
+
+
 }
