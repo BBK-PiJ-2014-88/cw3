@@ -340,7 +340,7 @@ public class ListTests{
 		sampleableListTester.add("7");
 		SampleableList temp = sampleableListTester.sample();
 		Object[] comparer = {"1","3","5","7"};
-		Object[] comparer2;
+		Object[] comparer2 = new Object[4];
 		for (int x = 0; x < temp.size(); x++){
 			comparer2[x] = (temp.get(x)).getReturnValue();
 		}
