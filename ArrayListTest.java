@@ -89,5 +89,21 @@ public class ArrayListTest{
 			System.out.println(functionalArrayTester.head());
 			System.out.println(functionalArrayTester.rest());
 
+
+			SampleableListImpl sampleableTester = new SampleableListImpl();
+			System.out.println(sampleableTester.sample());
+			sampleableTester.add("1");
+			sampleableTester.add("2");
+			sampleableTester.add("3");
+			sampleableTester.add("4");
+			sampleableTester.add("5");
+			sampleableTester.add("6");
+			sampleableTester.add("7");
+			System.out.println(sampleableTester);
+			System.out.println(sampleableTester.sample());
+			sampleableTester.remove(6);
+
+
+
 	}
 }

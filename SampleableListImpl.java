@@ -21,6 +21,9 @@ public class SampleableListImpl implements SampleableList{
 	public ReturnObject add(Object item){
 		return listMethodsContainer.add(item);
 	}
+	public String toString(){ //for tests
+		return listMethodsContainer.toString();
+	}
 	public SampleableList sample(){
 		if (isEmpty() == true){
 			return (new SampleableListImpl());
