@@ -18,13 +18,14 @@ public class ImprovedStackImpl implements ImprovedStack{
 		return internalStack.pop();
 	}
 	public ImprovedStack reverse(){
-		ImprovedStack reversedStack = new ImprovedStack();
-		ImprovedStack copyOfCurrentStack = new ImprovedStack();
+		ImprovedStack reversedStack = new ImprovedStackImpl();
 		for (int x = 0; x < this.size(); x++){
-
+			reversedStack.push((internalStack.internalList.get(x)).getReturnValue());
 		}
+		return reversedStack;
 	}
 	public void remove(Object object){
+
 	}
 
 
