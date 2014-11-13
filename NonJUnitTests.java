@@ -6,7 +6,10 @@ public class NonJUnitTests{
 	public void launch(){
 		ImprovedStackImpl improvedStackTester = new ImprovedStackImpl();
 		System.out.println("Testing Improved Stack");
-		System.out.println("Testing isEmpty on empty stack. Expect true");
+		System.out.println("Testing isEmpty on empty stack. Expect true:");
 		System.out.println(improvedStackTester.isEmpty());
+		System.out.println("Testing size method. Expect zero");
+		System.out.println(improvedStackTester.size());
+		System.out.println(improvedStackTester);
 	}
 }
