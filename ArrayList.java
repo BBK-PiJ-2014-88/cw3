@@ -1,17 +1,9 @@
 public class ArrayList implements List{
-	public Object[] theActualList;
-
-	public ArrayList(){
-		theActualList = new Object[10];
-		for (int x = 0; x < theActualList.length; x++){
-			//default value of Object is null. This list cannot hold null values so setting all to empty String
-			theActualList[x] = new String("Empty");
-		}
-	}
+	public Object[] theActualList = new Object[10];
 
 	public String toString(){    //used this method for testing
 		String output = "";
-		for (int x = 0; x < theActualList.length; x++){
+		for (int x = 0; x < size(); x++){
 			output = output + " " + theActualList[x];
 		}
 		return output;
@@ -27,10 +19,10 @@ public class ArrayList implements List{
 	}
 
 	public int size(){
-		//Number of elements in the list are the number of elements not equal to an empty string along length of the list
+		//Number of elements in the list are the number of elements not equal to null
 		int size = 0;
 		for (int x = 0; x < theActualList.length; x++){
-			if (!(theActualList[size].equals(new String("Empty")))){
+			if (!(theActualList[size].equals(null))){
 				size++;
 			}
 		}
@@ -74,7 +66,7 @@ public class ArrayList implements List{
 					temp[x] = theActualList[x + 1];
 				}
 			}
-			temp[temp.length -1] = new String("Empty");
+			temp[temp.length -1] = null;
 			this.theActualList = temp;
 			return returnObjectWithRemovedElement;
 		}
@@ -114,14 +106,14 @@ public class ArrayList implements List{
 	}
 
 	public void isNearlyFull(){
-		if (!(this.theActualList[this.theActualList.length - 2].equals(new String("Empty")))){  //ArrayList nearly full
+		if (!(this.theActualList[this.theActualList.length - 2].equals(null))){  //ArrayList nearly full
 			Object[] temp = new Object[(this.theActualList.length) *2];
 			for (int x = 0; x < temp.length; x++){
 				if (x < this.size()){
 					temp[x] = this.theActualList[x];
 				}
 				else{
-					temp[x] = new String("Empty");
+					temp[x] = null;
 				}
 			}
 			this.theActualList = temp;
