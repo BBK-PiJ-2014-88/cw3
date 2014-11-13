@@ -82,7 +82,7 @@ public class LinkedList implements List{
 	}
 
 	public ReturnObject add(int index, Object item){
-		if (index < 0 || index >= this.size()){
+		if (index < 0 || (index >= size() && size() != 0)){
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
 			return errorObject;
 		}
