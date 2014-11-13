@@ -19,6 +19,7 @@ public class ImprovedStackImpl implements ImprovedStack{
 	}
 	public ImprovedStack reverse(){
 		ImprovedStack reversedStack = new ImprovedStack();
+		ImprovedStack copyOfCurrentStack = new ImprovedStack();
 		for (int x = 0; x < this.size(); x++){
 
 		}
