@@ -9,7 +9,7 @@ public class StackImpl extends AbstractStack implements Stack{
 		return internalList.size();
 	}
 	public void push(Object item){
-		return internalList.add(0, item);
+		internalList.add(0, item);
 	}
 	public ReturnObject top(){
 		return internalList.get(0);
