@@ -22,7 +22,7 @@ public class ArrayList implements List{
 		//Number of elements in the list are the number of elements not equal to null
 		int size = 0;
 		for (int x = 0; x < theActualList.length; x++){
-			if (!(theActualList[size].equals(null))){
+			if (!(theActualList[size] == null)){
 				size++;
 			}
 		}
@@ -106,7 +106,7 @@ public class ArrayList implements List{
 	}
 
 	public void isNearlyFull(){
-		if (!(this.theActualList[this.theActualList.length - 2].equals(null))){  //ArrayList nearly full
+		if (!(this.theActualList[this.theActualList.length - 2] == null)){  //ArrayList nearly full
 			Object[] temp = new Object[(this.theActualList.length) *2];
 			for (int x = 0; x < temp.length; x++){
 				if (x < this.size()){
