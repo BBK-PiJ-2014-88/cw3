@@ -21,6 +21,8 @@ public class NonJUnitTests{
 		System.out.println(improvedStackTester);
 		System.out.println("Testing top. Expect element 5");
 		System.out.println(improvedStackTester.top());
+		System.out.println("Stack should be unchaged after top");
+		System.out.println(improvedStackTester);
 		System.out.println("Testing pop. Expect element 5");
 		System.out.println(improvedStackTester.pop());
 		System.out.println("Testing pop. Expect element 5 to have been removed from Stack");
@@ -43,7 +45,10 @@ public class NonJUnitTests{
 		improvedStackTester.remove("Element 5");
 		System.out.println("Remove should get rid of both of them");
 		System.out.println(improvedStackTester);
-
+		System.out.println("Testing reverse method below");
+		System.out.println(improvedStackTester.reverse());
+		System.out.println("Original List below should be unchanged");
+		System.out.println(improvedStackTester);
 
 
 
