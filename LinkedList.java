@@ -95,6 +95,13 @@ public class LinkedList implements List{
 			firstNodeInList = newNode;
 			return (new ReturnObjectImpl(null));
 		}
+		else if (index == 0){
+			Node newNode = new Node(item);
+			Node temp = firstNodeInList;
+			newNode.next = temp;
+			firstNodeInList = newNode;
+			return (new ReturnObjectImpl(null));
+		}
 		else{
 			Node newNode = new Node(item);
 			newNode.setNext(firstNodeInList.getNodeAtIndex(index));
