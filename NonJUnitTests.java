@@ -12,6 +12,8 @@ public class NonJUnitTests{
 		System.out.println(improvedStackTester.size());
 		System.out.println("Printing out the Improved stack below expect empty:");
 		System.out.println(improvedStackTester);
+		System.out.println("Testing popping from an empty stack, should return appropriate error message");
+		System.out.println(improvedStackTester.pop());
 		improvedStackTester.push("Element 1");
 		improvedStackTester.push("Element 2");
 		improvedStackTester.push("Element 3");
