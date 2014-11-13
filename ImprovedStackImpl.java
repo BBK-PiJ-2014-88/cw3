@@ -17,5 +17,14 @@ public class ImprovedStackImpl implements ImprovedStack{
 	public ReturnObject pop(){
 		return internalStack.pop();
 	}
+	public ImprovedStack reverse(){
+		ImprovedStack reversedStack = new ImprovedStack();
+		for (int x = this.size(); x >=0; x++){
+
+		}
+	}
+	public void remove(Object object){
+	}
+
 
 }
