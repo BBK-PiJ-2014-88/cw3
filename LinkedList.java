@@ -90,6 +90,11 @@ public class LinkedList implements List{
 			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
 			return errorObject;
 		}
+		else if (isEmpty() == true){
+			Node newNode = new Node(item);
+			firstNodeInList = newNode;
+			return (new ReturnObjectImpl(null));
+		}
 		else{
 			Node newNode = new Node(item);
 			newNode.setNext(firstNodeInList.getNodeAtIndex(index));
