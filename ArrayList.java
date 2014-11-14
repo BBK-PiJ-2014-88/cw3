@@ -53,31 +53,22 @@ public class ArrayList implements List{
 		}
 		else{
 			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(theActualList[index]);
-		    Object[] temp = new Object[theActualList.length];
-			for (int x = 0; x < temp.length - 1; x++){
-				if (x < index){
-					temp[x] = theActualList[x];
+			for (int x = index; x < theActualList.length - 1; x++){
+					theActualList[x] = theActualList[x + 1];
 				}
-				else{
-					temp[x] = theActualList[x + 1];
-				}
-			}
-			theActualList = temp;
 			return returnObjectWithRemovedElement;
 		}
 	}
 
 	public ReturnObject add(int index, Object item){
 		if (index < 0 || index >= this.size()){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS));
 		}
 		else if (item == null){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT));
 		}
 		else{
-			this.isNearlyFull(); //check if list is nearly full first before moving objects one place to the right to make room for new item
+			this.isFull();
 			Object temp = theActualList[index];
 			Object temp2;
 			for (int x = index; x < theActualList.length - 1; x++){
@@ -100,8 +91,8 @@ public class ArrayList implements List{
 		return (new ReturnObjectImpl(null));
 	}
 
-	public void isNearlyFull(){
-		if (!(this.theActualList[this.theActualList.length - 2] == null)){  //ArrayList nearly full
+	public void isFull(){
+		if (!(theActualList[theActualList.length - 1] == null)){  //ArrayList nearly full
 			Object[] temp = new Object[(this.theActualList.length) *2];
 			for (int x = 0; x < temp.length; x++){
 				if (x < this.size()){
