@@ -25,27 +25,25 @@ public class ArrayList implements List{
 			if (!(theActualList[size] == null)){
 				size++;
 			}
+			else if (theActualList[size] == null){ //no need to continue down the list. All values will be null after a null is found
+				break;
+			}
 		}
 		return size;
 	}
 
-
-
 	public ReturnObject get(int index){
 		if (this.isEmpty() == true){
-			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
-			return errorObject2;
+			return (new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE));
 		}
 		else if (index < 0 || index >= this.size()){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS));
 		}
 		else{
-			ReturnObject returnObjectWithElement = new ReturnObjectImpl(theActualList[index]);
-			return returnObjectWithElement;
+			return (new ReturnObjectImpl(theActualList[index]));
 		}
-
 	}
+
 	public ReturnObject remove(int index){
 		if (this.isEmpty() == true){
 			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
