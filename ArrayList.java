@@ -68,32 +68,31 @@ public class ArrayList implements List{
 			return (new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT));
 		}
 		else{
-			this.isFull();
+			isFull();
 			Object temp = theActualList[index];
 			Object temp2;
 			for (int x = index; x < theActualList.length - 1; x++){
-				temp2 = this.theActualList[x + 1];
-				this.theActualList[x + 1] = temp;
+				temp2 = theActualList[x + 1];
+				theActualList[x + 1] = temp;
 				temp = temp2;
 			}
-			this.theActualList[index] = item;
+			theActualList[index] = item;
 			return (new ReturnObjectImpl(null));
 		}
 	}
 
 	public ReturnObject add(Object item){
 		if (item == null){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT));
 		}
-		this.isNearlyFull();
+		isFull();
 		theActualList[this.size()] = item;
 		return (new ReturnObjectImpl(null));
 	}
 
 	public void isFull(){
-		if (!(theActualList[theActualList.length - 1] == null)){  //ArrayList nearly full
-			Object[] temp = new Object[(this.theActualList.length) *2];
+		if (!(theActualList[theActualList.length - 1] == null)){  //ArrayList full
+			Object[] temp = new Object[(theActualList.length) *2];
 			for (int x = 0; x < temp.length; x++){
 				if (x < this.size()){
 					temp[x] = this.theActualList[x];
@@ -102,7 +101,7 @@ public class ArrayList implements List{
 					temp[x] = null;
 				}
 			}
-			this.theActualList = temp;
+			theActualList = temp;
 		}
 	}
 }
