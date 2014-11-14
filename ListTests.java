@@ -394,6 +394,7 @@ public class ListTests{
 	}
 
 	//Checking Functional List functionality below
+
 	//Testing head() method on EmptyList
 	@Test
 	public void checkHeadOnEmptyArrayList(){
