@@ -4,14 +4,14 @@ public class Node{
 	public Node next;
 
 	public Object getElement(){
-		return this.element;
+		return element;
 	}
 	public Node(Object objectStoredInNode){
-		this.element = objectStoredInNode;
-		this.next = null;
+		element = objectStoredInNode;
+		next = null;
 	}
 	public void setNext(Node nextNode){
-		this.next = nextNode;
+		next = nextNode;
 	}
 	public String toString(){
 		//Prints Object, useful for testing list
