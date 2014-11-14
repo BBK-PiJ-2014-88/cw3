@@ -5,6 +5,7 @@ public class ListTests{
 	private FunctionalArrayList arrayListTester;
 	private FunctionalLinkedList linkedListTester;
 	private SampleableListImpl sampleableListTester;
+	//Functional Lists extend ArrayList and LinkedList so if their method works, this means ArrayList and LinkedList also work
 
 	//Testing isEmpty() with an empty list
 	@Before
