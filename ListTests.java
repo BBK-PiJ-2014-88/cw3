@@ -392,7 +392,60 @@ public class ListTests{
 		Object output = (linkedListTester.get(4)).getReturnValue();
 		assertEquals(output, expected);
 	}
-
+	// Tests adding a value into last position
+	@Test
+	public void checkAddIndexLastArrayList(){
+		arrayListTester.add("Not empty Yay");
+		arrayListTester.add("Not empty Yay1");
+		arrayListTester.add("Not empty Yay2");
+		arrayListTester.add("Not empty Yay3");
+		arrayListTester.add("Not empty Yay4");
+		arrayListTester.add("Not empty Yay5");
+		arrayListTester.add(5, "New Object");
+		Object expected = "New Object";
+		Object output = (arrayListTester.get(5)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkAddIndexLastLinkedList(){
+		linkedListTester.add("Not empty Yay");
+		linkedListTester.add("Not empty Yay1");
+		linkedListTester.add("Not empty Yay2");
+		linkedListTester.add("Not empty Yay3");
+		linkedListTester.add("Not empty Yay4");
+		linkedListTester.add("Not empty Yay5");
+		linkedListTester.add(5, "New Object");
+		Object expected = "New Object";
+		Object output = (linkedListTester.get(5)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	// Tests adding a value into first position
+	@Test
+	public void checkAddIndexFirstArrayList(){
+		arrayListTester.add("Not empty Yay");
+		arrayListTester.add("Not empty Yay1");
+		arrayListTester.add("Not empty Yay2");
+		arrayListTester.add("Not empty Yay3");
+		arrayListTester.add("Not empty Yay4");
+		arrayListTester.add("Not empty Yay5");
+		arrayListTester.add(0, "New Object");
+		Object expected = "New Object";
+		Object output = (arrayListTester.get(0)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkAddIndexFirstLinkedList(){
+		linkedListTester.add("Not empty Yay");
+		linkedListTester.add("Not empty Yay1");
+		linkedListTester.add("Not empty Yay2");
+		linkedListTester.add("Not empty Yay3");
+		linkedListTester.add("Not empty Yay4");
+		linkedListTester.add("Not empty Yay5");
+		linkedListTester.add(0, "New Object");
+		Object expected = "New Object";
+		Object output = (linkedListTester.get(0)).getReturnValue();
+		assertEquals(output, expected);
+	}
 	//Checking Functional List functionality below
 
 	//Testing head() method on EmptyList
@@ -506,27 +559,5 @@ public class ListTests{
 		Object output = (sampleableListTester.get(4)).getReturnValue();
 		assertEquals(output, expected);
 	}
-
-	//The next Test will check that the sample() method works
-	/*@Test
-	public void checkSampleMethod(){
-		sampleableListTester.add("1");
-		sampleableListTester.add("2");
-		sampleableListTester.add("3");
-		sampleableListTester.add("4");
-		sampleableListTester.add("5");
-		sampleableListTester.add("6");
-		sampleableListTester.add("7");
-		SampleableList temp = sampleableListTester.sample();
-		Object[] comparer = {"1","3","5","7"};
-		Object[] comparer2 = new Object[4];
-		for (int x = 0; x < temp.size(); x++){
-			comparer2[x] = (temp.get(x)).getReturnValue();
-		}
-		Object[] expected = comparer;
-		Object[] output = comparer2;
-		assertEquals(output, expected);
-	}
-	*/
 
 }

@@ -25,7 +25,7 @@ public class Node{
 			return this;
 		}
 		else{
-			return this.next.getLastNode();
+			return this.getNext().getLastNode();
 		}
 	}
 	public Node getNodeAtIndex(int index){
@@ -33,7 +33,7 @@ public class Node{
 			return this;
 		}
 		else{
-			return this.next.getNodeAtIndex(index - 1);
+			return this.getNext().getNodeAtIndex(index - 1);
 		}
 	}
 }
