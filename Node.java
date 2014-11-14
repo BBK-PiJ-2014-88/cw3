@@ -15,7 +15,7 @@ public class Node{
 	}
 	public String toString(){
 		//Prints Object, useful for testing list
-		return "" + this.element;
+		return "" + element;
 	}
 	public Node getLastNode(){
 		if (this.next == null){

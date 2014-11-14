@@ -39,12 +39,10 @@ public class LinkedList implements List{
 
 	public ReturnObject get(int index){
 		if (this.isEmpty() == true){
-			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
-			return errorObject2;
+			return (new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE));
 		}
 		else if (index < 0 || index >= this.size()){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS));
 		}
 		else{
 			Object gottenElement = (firstNodeInList.getNodeAtIndex(index)).getElement();
@@ -55,40 +53,35 @@ public class LinkedList implements List{
 
 	public ReturnObject remove(int index){
 		if (this.isEmpty() == true){
-			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
-			return errorObject2;
+			return (new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE));
 		}
 		else if (index < 0 || index >= this.size()){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS));
 		}
 		else if (index == 0){
 			Node removedNode = firstNodeInList;
 			firstNodeInList = firstNodeInList.next;
 			return new ReturnObjectImpl(removedNode.getElement());
 		}
-		else{
+		else if (index == size()-1){
 			Node removedNode = firstNodeInList.getNodeAtIndex(index);
-			if (index != this.size() -1){
-				(firstNodeInList.getNodeAtIndex(index - 1)).setNext(firstNodeInList.getNodeAtIndex(index + 1));
-				return new ReturnObjectImpl(removedNode.getElement());
-			}
-			else{
 			(firstNodeInList.getNodeAtIndex(index - 1)).next = null;
 			return new ReturnObjectImpl(removedNode.getElement());
-			}
+		}
+		else{
+			Node removedNode = firstNodeInList.getNodeAtIndex(index);
+			(firstNodeInList.getNodeAtIndex(index - 1)).setNext(firstNodeInList.getNodeAtIndex(index + 1));
+			return new ReturnObjectImpl(removedNode.getElement());
 		}
 
 	}
 
 	public ReturnObject add(int index, Object item){
 		if (index < 0 || (index >= size() && size() != 0)){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS));
 		}
 		else if (item == null){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT));
 		}
 		else if (isEmpty() == true){
 			Node newNode = new Node(item);
@@ -98,7 +91,7 @@ public class LinkedList implements List{
 		else if (index == 0){
 			Node newNode = new Node(item);
 			Node temp = firstNodeInList;
-			newNode.next = temp;
+			newNode.setNext(temp);
 			firstNodeInList = newNode;
 			return (new ReturnObjectImpl(null));
 		}
@@ -113,10 +106,9 @@ public class LinkedList implements List{
 	public ReturnObject add(Object item){
 		Node newNode = new Node(item);
 		if (item == null){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INVALID_ARGUMENT));
 		}
-		else if(this.isEmpty() == true ){
+		else if(isEmpty() == true ){
 			firstNodeInList = newNode;
 			return (new ReturnObjectImpl(null));
 		}
