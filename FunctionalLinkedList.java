@@ -1,8 +1,7 @@
 public class FunctionalLinkedList extends LinkedList implements FunctionalList{
 	public ReturnObject head(){
 		if (isEmpty() == true){
-			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
-			return errorObject2;
+			return (new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE));
 		}
 		else{
 			return (new ReturnObjectImpl(firstNodeInList.getElement()));

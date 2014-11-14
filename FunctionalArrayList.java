@@ -15,7 +15,7 @@ public class FunctionalArrayList extends ArrayList implements FunctionalList {
 		}
 		else{
 			Object[] temp = new Object[theActualList.length];
-			for (int x = 0; x < theActualList.length - 1; x++){
+			for (int x = 0; x < this.size(); x++){
 				temp[x] = theActualList[x+1];
 			}
 			FunctionalArrayList newFunctionalList = new FunctionalArrayList();
