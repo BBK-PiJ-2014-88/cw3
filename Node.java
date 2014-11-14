@@ -13,6 +13,9 @@ public class Node{
 	public void setNext(Node nextNode){
 		next = nextNode;
 	}
+	public Node getNext(){
+		return next;
+	}
 	public String toString(){
 		//Prints Object, useful for testing list
 		return "" + element;

@@ -38,10 +38,10 @@ public class LinkedList implements List{
 	}
 
 	public ReturnObject get(int index){
-		if (this.isEmpty() == true){
+		if (isEmpty() == true){
 			return (new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE));
 		}
-		else if (index < 0 || index >= this.size()){
+		else if (index < 0 || index >= size()){
 			return (new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS));
 		}
 		else{
@@ -52,20 +52,20 @@ public class LinkedList implements List{
 	}
 
 	public ReturnObject remove(int index){
-		if (this.isEmpty() == true){
+		if (isEmpty() == true){
 			return (new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE));
 		}
-		else if (index < 0 || index >= this.size()){
+		else if (index < 0 || index >= size()){
 			return (new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS));
 		}
 		else if (index == 0){
 			Node removedNode = firstNodeInList;
-			firstNodeInList = firstNodeInList.next;
+			firstNodeInList = firstNodeInList.getNext();
 			return new ReturnObjectImpl(removedNode.getElement());
 		}
 		else if (index == size()-1){
 			Node removedNode = firstNodeInList.getNodeAtIndex(index);
-			(firstNodeInList.getNodeAtIndex(index - 1)).next = null;
+			(firstNodeInList.getNodeAtIndex(index - 1)).setNext(null);
 			return new ReturnObjectImpl(removedNode.getElement());
 		}
 		else{
