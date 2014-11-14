@@ -46,16 +46,14 @@ public class ArrayList implements List{
 
 	public ReturnObject remove(int index){
 		if (this.isEmpty() == true){
-			ReturnObject errorObject2 = new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE);
-			return errorObject2;
+			return (new ReturnObjectImpl(ErrorMessage.EMPTY_STRUCTURE));
 		}
 		else if (index < 0 || index >= this.size()){
-			ReturnObject errorObject = new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS);
-			return errorObject;
+			return (new ReturnObjectImpl(ErrorMessage.INDEX_OUT_OF_BOUNDS));
 		}
 		else{
 			ReturnObject returnObjectWithRemovedElement = new ReturnObjectImpl(theActualList[index]);
-		    Object[] temp = new Object[this.theActualList.length];
+		    Object[] temp = new Object[theActualList.length];
 			for (int x = 0; x < temp.length - 1; x++){
 				if (x < index){
 					temp[x] = theActualList[x];
@@ -64,8 +62,7 @@ public class ArrayList implements List{
 					temp[x] = theActualList[x + 1];
 				}
 			}
-			temp[temp.length -1] = null;
-			this.theActualList = temp;
+			theActualList = temp;
 			return returnObjectWithRemovedElement;
 		}
 	}

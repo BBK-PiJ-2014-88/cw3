@@ -212,6 +212,56 @@ public class ListTests{
 		Object output = (linkedListTester.get(4)).getReturnValue();
 		assertEquals(output, expected);
 	}
+	//Tests Remove method on first element in list
+	@Test
+	public void checkRemoveFirstArrayList(){
+		arrayListTester.add("Not empty Yay");
+		arrayListTester.add("Not empty Yay1");
+		arrayListTester.add("Not empty Yay2");
+		arrayListTester.add("Not empty Yay3");
+		arrayListTester.add("Not empty Yay4");
+		arrayListTester.add("Not empty Yay5");
+		Object expected = "Not empty Yay";
+		Object output = (arrayListTester.remove(0)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkRemoveFirstLinkedList(){
+		linkedListTester.add("Not empty Yay");
+		linkedListTester.add("Not empty Yay1");
+		linkedListTester.add("Not empty Yay2");
+		linkedListTester.add("Not empty Yay3");
+		linkedListTester.add("Not empty Yay4");
+		linkedListTester.add("Not empty Yay5");
+		Object expected = "Not empty Yay";
+		Object output = (linkedListTester.remove(0)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	//Tests Remove method on last element in list
+	@Test
+	public void checkRemoveLastArrayList(){
+		arrayListTester.add("Not empty Yay");
+		arrayListTester.add("Not empty Yay1");
+		arrayListTester.add("Not empty Yay2");
+		arrayListTester.add("Not empty Yay3");
+		arrayListTester.add("Not empty Yay4");
+		arrayListTester.add("Not empty Yay5");
+		Object expected = "Not empty Yay5";
+		Object output = (arrayListTester.remove(5)).getReturnValue();
+		assertEquals(output, expected);
+	}
+	@Test
+	public void checkRemoveLastLinkedList(){
+		linkedListTester.add("Not empty Yay");
+		linkedListTester.add("Not empty Yay1");
+		linkedListTester.add("Not empty Yay2");
+		linkedListTester.add("Not empty Yay3");
+		linkedListTester.add("Not empty Yay4");
+		linkedListTester.add("Not empty Yay5");
+		Object expected = "Not empty Yay5";
+		Object output = (linkedListTester.remove(5)).getReturnValue();
+		assertEquals(output, expected);
+	}
 	// Tests adding a value into a position in the list using an index
 	@Test
 	public void checkAddIndexArrayList(){
