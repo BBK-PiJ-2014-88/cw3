@@ -1,16 +1,16 @@
 public class ReturnObjectImpl implements ReturnObject{
 
-	private Object Value;
+	private Object value;
 	private ErrorMessage errorMsg;
 
 	public ReturnObjectImpl(ErrorMessage msg){
-		this.errorMsg = msg;
-		this.Value = null;
+		errorMsg = msg;
+		value = null;
 	}
 
 	public ReturnObjectImpl(Object valueToAdd){
-		this.Value = valueToAdd;
-		this.errorMsg = null;
+		value = valueToAdd;
+		errorMsg = null;
 	}
 
 	public boolean hasError(){
@@ -27,19 +27,19 @@ public class ReturnObjectImpl implements ReturnObject{
 			return ErrorMessage.NO_ERROR;
 		}
 		else{
-			return this.errorMsg;
+			return errorMsg;
 		}
 	}
 	public Object getReturnValue(){
-		return this.Value;
+		return value;
 	}
 
 	public String toString(){
 		if (this.errorMsg != null){
-			return "" + this.errorMsg;
+			return "" + errorMsg;
 		}
 		else{
-			return "" + this.Value;
+			return "" + value;
 		}
 	}
 
