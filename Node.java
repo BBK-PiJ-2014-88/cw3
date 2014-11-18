@@ -1,7 +1,7 @@
 public class Node{
 	//Wrapper for linkedList Implementation. Holds an Object and points to next element in LinkedList
-	public Object element;
-	public Node next;
+	private Object element;
+	private Node next;
 
 	public Object getElement(){
 		return element;
@@ -21,7 +21,7 @@ public class Node{
 		return "" + element;
 	}
 	public Node getLastNode(){
-		if (this.next == null){
+		if (this.getNext() == null){
 			return this;
 		}
 		else{
