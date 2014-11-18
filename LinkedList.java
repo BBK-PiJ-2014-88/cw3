@@ -29,11 +29,11 @@ public class LinkedList implements List{
 	}
 
 	public int findLength(Node position){
-		if (position.next == null){
+		if (position.getNext() == null){
 			return 1;
 		}
 		else{
-			return 1 + findLength(position.next);
+			return 1 + findLength(position.getNext());
 		}
 	}
 
