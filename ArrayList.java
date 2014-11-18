@@ -22,11 +22,11 @@ public class ArrayList implements List{
 		//Number of elements in the list are the number of elements not equal to null
 		int size = 0;
 		for (int x = 0; x < theActualList.length; x++){
-			if (!(theActualList[size] == null)){
-				size++;
-			}
-			else if (theActualList[size] == null){ //no need to continue down the list. All values will be null after a null is found
+			if (theActualList[size] == null){  //no need to continue down the list. All values will be null after a null is found
 				break;
+			}
+			else{
+				size++;
 			}
 		}
 		return size;
